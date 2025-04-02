@@ -149,5 +149,5 @@ button:hover {
 button[data-showMoreButton] {
   margin: 32px auto 0;
   width: 125px;
-  /* display: none; */
+  display: none;
 }

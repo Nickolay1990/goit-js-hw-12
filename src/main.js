@@ -2,8 +2,6 @@ import * as render from './js/render-functions';
 import { DOM_NAVIGATION } from './js/render-functions';
 import { showError, params, getImagesByQuery } from './js/pixabay-api';
 
-render.hideLoadMoreButton();
-
 const fetchData = { page: 1, searchData: '' };
 
 DOM_NAVIGATION.form.addEventListener('submit', submitHandler);
