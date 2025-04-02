@@ -16,17 +16,8 @@ const gallery = new SimpleLightbox('.gallery a', {
 
 export function createGallery(images) {
   const markUp = images
-    .map(
-      ({
-        webformatURL,
-        largeImageURL,
-        tags,
-        likes,
-        views,
-        comments,
-        downloads,
-      }) => {
-        return `
+    .map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => {
+      return `
                 <li class="card">
                     <a href="${largeImageURL}">
                         <img src="${webformatURL}" alt="${tags}" class="card-pic"/>
@@ -46,8 +37,7 @@ export function createGallery(images) {
                         </ul>
                     </a>
                 </li>`;
-      }
-    )
+    })
     .join('');
   DOM_NAVIGATION.galleryList.insertAdjacentHTML('beforeend', markUp);
   gallery.refresh();
@@ -66,9 +56,9 @@ export function hideLoader() {
 }
 
 export function showLoadMoreButton() {
-  DOM_NAVIGATION.showMoreButton.style.display = 'block';
+  DOM_NAVIGATION.showMoreButton.classList.remove('visually-hidden');
 }
 
 export function hideLoadMoreButton() {
-  DOM_NAVIGATION.showMoreButton.style.display = 'none';
+  DOM_NAVIGATION.showMoreButton.classList.add('visually-hidden');
 }
